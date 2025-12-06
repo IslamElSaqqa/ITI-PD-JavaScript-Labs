@@ -1,55 +1,35 @@
 var Name = prompt("Enter your name: ");
-const nameRegex = /^[A-Z][a-z]+$/;
+// Tracker
 var flag = false;
 
 while (!flag) {
-  if (!nameRegex.test(Name) || typeof Name !== "string") {
+  if (typeof Name !== "string") {
     alert("Enter your name correctly!");
     Name = prompt("Enter your name: ");
   } else {
     flag = true;
   }
 }
-
-var phoneNum = +prompt("Enter your phone: ");
 flag = false;
 
+// Prompt for birth year and validate it's a number,
+//  it's 4 digits, and less than 2010
+var bYear = +prompt("Enter your birth year: ");
+
 while (!flag) {
-  if (typeof phoneNum !== "number" || phoneNum.toString().length !== 8) {
-    alert("Enter your phone number correctly (8 digits)!");
-    phoneNum = +prompt("Enter your phone: ");
+  if (isNaN(bYear) || bYear.toString().length !== 4 || bYear >= 2010) {
+    alert("Enter your birth year correctly! (It should be a number and less than 2010)");
+    bYear = +prompt("Enter your birth year: ");
   } else {
     flag = true;
   }
 }
 
-var mobileNum = prompt("Enter your mobile Number: (11 numbers) only");
-const mobileRegex = /^01[0-2][0-9]{8}$/;
-// const mobileRegex = /^01(0|1|2)[0-8]{8}$/
-flag = false;
+//get the age from the current year using the date constructor
+var currentYear = new Date().getFullYear();
+var age = currentYear - bYear;
 
-while (!flag) {
-  if (!mobileRegex.test(mobileNum) || mobileNum.length !== 11) {
-    alert("Enter your Mobile Number correctly!");
-    mobileNum = prompt("Enter your mobile Number: (11 numbers) only");
-  } else {
-    flag = true;
-  }
-}
-
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-var email = prompt("Enter your email: (abc@gmail.com)");
-flag = false;
-
-while (!flag) {
-  if (!emailRegex.test(email) || typeof email !== "string") {
-    alert("Enter your email correctly!");
-    email = prompt("Enter your email: (abc@gmail.com)");
-  } else {
-    flag = true;
-  }
-}
-document.write(`<p><b>Name: </b>${Name}</p>`);
-document.write(`<p><b>Phone number: </b>${phoneNum}</p>`);
-document.write(`<p><b>Mobile number: </b>${mobileNum}</p>`);
-document.write(`<p><b>email: </b>${email}</p>`);
+//Showing all data (Name, Birth Year, and Age) on the page
+document.write(`<p><b><u>Name: </u></b>${Name}</p>`);
+document.write(`<p><b><u>Birth Year: </u></b>${bYear}</p>`);
+document.write(`<p><b><u>Age:</u></b>${age}</p>`);
