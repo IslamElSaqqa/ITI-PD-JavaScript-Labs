@@ -1,21 +1,29 @@
-var sum = 0;
-var stopLoop = false;
+let sum = 0;
+let number;
 
-while (!stopLoop) {
-    var userInput = prompt("Enter a number (Enter 0 to stop or when the sum exceeds 100):");
+do {
+    let userInput = prompt("Enter a number (Enter 0 to stop or when the sum exceeds 100):");
 
     if (userInput === null) {
-        alert("Please enter a valid number.");
-    } else {
-        var number = parseFloat(userInput);
-        
-        if (isNaN(number)) {
-            alert("Please enter a valid number.");
-        } else {
-            sum += number;
-            stopLoop = number === 0 || sum > 100;
-        }
+        alert("Input cancelled. Exiting.");
+        break;
     }
-}
+
+    number = parseFloat(userInput);
+
+    // This is an additional check 
+    if (isNaN(number)) {
+        alert("Please enter a valid number.");
+        continue; 
+    }
+
+    sum += number;
+
+    if (sum > 100) {
+        alert("Sum exceeded 100.");
+        break;
+    }
+
+} while (number !== 0);
 
 alert("Total sum of the entered values: " + sum);

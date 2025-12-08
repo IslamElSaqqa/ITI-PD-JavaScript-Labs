@@ -1,5 +1,5 @@
 // we need to ask the user to enter how many headings he wants to display
-var headingNo = ParseInt(prompt("Enter No of heading from 1 to 6:"));
+var headingNo = +prompt("Enter No of heading from 1 to 6:");
 document.write("<hr>");
 if (headingNo > 0 && headingNo < 7) {
     for (let i = 1; i <= headingNo; i++) {
