@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Showing Pictures of babies</h1>
+    <hr>
+
+    <div class="Container">
+        <ul>
+            <li><button id="next" class="Btn">Next</button></li>
+            <li><button id="slider" class="Btn">Image Slider</button></li>
+            <li><button id="stop" class="Btn">Stop</button></li>
+            <li><button id="prev" class="Btn">Previous</button></li>
+        </ul>
+    </div>
+
+    <div class="Images">
+        <img id="move" src="./imgs/SlideShow/1.jpg" alt="photo1" width="350" height="200">
+        
+        <p id="desc" style="font-size:18px; font-weight:bold; margin-top:10px; text-align:center;">
+        </p>
+    </div>
+
+    <script src="./Scripts/ImageSlideShow.js"></script>
+</body>
+</html>

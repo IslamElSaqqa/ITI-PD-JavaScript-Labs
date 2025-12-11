@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../styles/register.css">
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="regForm">
+
+    <!-- Full Name -->
+    <label>Full Name:</label><br>
+    <input type="text" id="fullname" placeholder="Enter your Name:" required>
+    <span id="nameError" class="error">invalid name</span>
+    <br><br>
+
+    <!-- Email -->
+    <label>Email:</label><br>
+    <input type="email" id="email" required>
+    <br><br>
+
+    <!-- City -->
+    <label>City:</label><br>
+    <select id="city">
+        <option>New York</option>
+        <option>London</option>
+        <option>Paris</option>
+        <option>Dubai</option>
+        <option>Tokyo</option>
+    </select>
+    <br><br>
+
+    <!-- Password -->
+    <label>Password:</label><br>
+    <input type="password" id="password" required>
+    <br><br>
+
+    <!-- Repeat Password -->
+    <label>Repeat Password:</label><br>
+    <input type="password" id="repeatPassword" required>
+    <span id="passError" class="error">password and repeat password should be the same</span>
+    <br><br>
+
+    <!-- Terms -->
+    <input type="checkbox" id="terms" required> I accept the terms and conditions
+    <br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<!-- <script src="../Scripts/register.js"></script> -->
+<script src="../Scripts/register_v2.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+</head>
+<body>
+
+<h2 id="msg"></h2>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    if (name) {
+        // If name is present in the query string, display the personalized message
+        document.getElementById("msg").textContent = "Thank you, " + name + " for registering on our website.";
+    } else {
+        // If name is not present, display a generic thank you message
+        document.getElementById("msg").textContent = "Thank you for registering on our website!";
+    }
+</script>
+
+</body>
+</html>
